@@ -3,40 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <title>Лила. Игра самопознания</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
-  <script src="game.js"></script>
 </head>
 <body>
-
-<!-- Главная -->
-<div id="main-screen" class="main-screen">
-  <div class="title">ЛИЛА<br><span>ИГРА САМОПОЗНАНИЯ</span></div>
-  <div class="subtitle">Путешествие в глубины сознания</div>
-  <button class="start-btn" onclick="openGame()">НАЧАТЬ ПУТЬ</button>
-</div>
-
-<!-- Игра -->
-<div id="game-screen" class="game hidden">
-  <div class="game-title">Путь начат…</div>
-
-  <div id="board"></div>
-
-  <button id="roll" class="roll-btn">Бросить кубик</button>
-
-  <div id="info" class="info"></div>
-</div>
-
-<!-- Окно клетки -->
-<div id="cell-modal" class="modal hidden">
-  <div class="modal-content">
-    <div id="cell-title" class="modal-title"></div>
-    <div id="cell-text" class="modal-text"></div>
-    <button class="modal-btn" onclick="closeModal()">Продолжить</button>
+  <div id="main-screen">
+    <h1>ЛИЛА. Игра самопознания</h1>
+    <h2>Путешествие в глубины сознания</h2>
+    <button id="start-btn">НАЧАТЬ ПУТЬ</button>
   </div>
-</div>
 
+  <div id="game-screen" class="hidden">
+    <h2>Ваш путь начат</h2>
+    <button id="roll-btn">Бросить кубик</button>
+    <div id="dice-result"></div>
+  </div>
 
+  <div id="cell-modal" class="modal hidden">
+    <div class="modal-content">
+      <div id="cell-title"></div>
+      <div id="cell-text"></div>
+      <button class="modal-btn" onclick="closeModal()">Продолжить</button>
+    </div>
+  </div>
 
+  <script src="game.js"></script>
 </body>
 </html>
