@@ -1,6 +1,8 @@
 function openGame() {
   document.getElementById("main-screen").classList.add("hidden");
   document.getElementById("game-screen").classList.remove("hidden");
+  // модалка остается скрытой
+  document.getElementById("cell-madal").classList.add("hidden");
 }
 
 const board = document.getElementById("board");
@@ -58,3 +60,4 @@ function showCell(num) {
 function closeModal() {
   document.getElementById("cell-modal").classList.add("hidden");
 }
+
