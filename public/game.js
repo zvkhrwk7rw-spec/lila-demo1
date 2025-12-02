@@ -1,61 +1,28 @@
+document.getElementById('start-btn').addEventListener('click', openGame);
+document.getElementById('roll-btn').addEventListener('click', rollDice);
+
 function openGame() {
   document.getElementById("main-screen").classList.add("hidden");
   document.getElementById("game-screen").classList.remove("hidden");
   document.getElementById("cell-modal").classList.add("hidden");
 }
 
-const board = document.getElementById("board");
-let position = 1;
-let token;
-
-// генерируем 64 клетки
-for (let i = 1; i <= 64; i++) {
-  let cell = document.createElement("div");
-  cell.className = "cell";
-  cell.setAttribute("data-id", i);
-  cell.textContent = i;
-
-  if (i === 1) {
-    token = document.createElement("div");
-    token.className = "token";
-    cell.appendChild(token);
-  }
-
-  board.appendChild(cell);
+function rollDice() {
+  const result = Math.floor(Math.random() * 64) + 1; // числа 1–64
+  document.getElementById('dice-result').textContent = Выпало: ${result};
+  showCell(result);
 }
 
-document.getElementById("roll").onclick = () => {
-  const dice = Math.floor(Math.random() * 6) + 1;
-  position += dice;
-  if (position > 64) position = 64;
+function showCell(number) {
+  const title = Клетка ${number};
+  const text = Это духовное послание для клетки ${number}.; // сюда вставляй свои описания
 
-  moveToken(position);
+  document.getElementById('cell-title').textContent = title;
+  document.getElementById('cell-text').textContent = text;
 
-  document.getElementById("info").innerHTML =
-    Выпало: <b>${dice}</b>;
-
-  // открыть окно клетки
-  showCell(position);
-};
-
-function moveToken(pos) {
-  const cells = document.querySelectorAll(".cell");
-
-  cells.forEach(c => {
-    if (c.contains(token)) c.removeChild(token);
-  });
-
-  cells[pos - 1].appendChild(token);
-}
-
-function showCell(num) {
-  document.getElementById("cell-title").innerText = Клетка ${num};
-  document.getElementById("cell-text").innerText = 
-    "Здесь будет ваше описание этой клетки.";
-
-  document.getElementById("cell-modal").classList.remove("hidden");
+  document.getElementById('cell-modal').classList.remove('hidden');
 }
 
 function closeModal() {
-
+  document.getElementById('cell-modal').classList.add('hidden');
 }
