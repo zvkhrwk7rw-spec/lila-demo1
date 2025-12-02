@@ -1,6 +1,7 @@
 function openGame() {
   document.getElementById("main-screen").classList.add("hidden");
   document.getElementById("game-screen").classList.remove("hidden");
+  document.getElementById("cell-modal").classList.add("hidden");
 }
 
 const board = document.getElementById("board");
@@ -56,5 +57,5 @@ function showCell(num) {
 }
 
 function closeModal() {
-  document.getElementById("cell-modal").classList.add("hidden");
+
 }
