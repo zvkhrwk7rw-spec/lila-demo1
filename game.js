@@ -1,15 +1,15 @@
 function openGame() {
   document.getElementById("main-screen").classList.add("hidden");
   document.getElementById("game-screen").classList.remove("hidden");
-  // модалка остается скрытой
-  document.getElementById("cell-madal").classList.add("hidden");
+  // Модалка остаётся скрытой
+  document.getElementById("cell-modal").classList.add("hidden");
 }
 
 const board = document.getElementById("board");
 let position = 1;
 let token;
 
-// генерируем 64 клетки
+// создаём 64 клетки
 for (let i = 1; i <= 64; i++) {
   let cell = document.createElement("div");
   cell.className = "cell";
@@ -60,4 +60,3 @@ function showCell(num) {
 function closeModal() {
   document.getElementById("cell-modal").classList.add("hidden");
 }
-
