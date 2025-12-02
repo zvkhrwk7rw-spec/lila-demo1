@@ -1,0 +1,185 @@
+body {
+  margin: 0;
+  background: radial-gradient(circle at center, #4a1a6d, #130018);
+  color: #f0e6ff;
+  font-family: 'Georgia';
+  overflow-x: hidden;
+  text-align: center;
+}
+
+/* Главная */
+.main-screen {
+  padding-top: 120px;
+  animation: fadeIn 1.3s ease;
+}
+
+.title {
+  font-size: 46px;
+  line-height: 1.2;
+  text-shadow: 0 0 18px #cfa8ff;
+}
+
+.title span {
+  font-size: 22px;
+}
+
+.subtitle {
+  margin-top: 10px;
+  font-size: 18px;
+  opacity: 0.8;
+  text-shadow: 0 0 10px #a675ff;
+}
+
+.start-btn {
+  margin-top: 40px;
+  padding: 18px 42px;
+  font-size: 20px;
+  background: linear-gradient(90deg, #b671ff, #e2c7ff);
+  border: none;
+  border-radius: 50px;
+  color: #1d0037;
+  box-shadow: 0 0 25px #a45aff;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.start-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px #d9b6ff;
+}
+
+/* Игра */
+.hidden {
+  display: none;
+}
+
+.game {
+  margin-top: 30px;
+}
+
+.game-title {
+  font-size: 26px;
+  margin-bottom: 20px;
+  text-shadow: 0 0 12px #cfa8ff;
+}
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(8, 60px);
+  grid-gap: 4px;
+  margin: 0 auto 20px;
+  width: 502px;
+}
+
+.cell {
+  width: 60px;
+  height: 60px;
+  border: 1px solid #9254cc;
+  background: rgba(190, 120, 255, 0.1);
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Фишка */
+.token {
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, #ffd36c, #d99100);
+  border-radius: 50%;
+  box-shadow: 0 0 12px #ffcf66;
+  position: absolute;
+}
+
+/* Кнопка кубика */
+.roll-btn {
+  font-size: 20px;
+  padding: 14px 32px;
+  background: #d2a6ff;
+  border: none;
+  border-radius: 30px;
+  color: #2e004e;
+  box-shadow: 0 0 15px #bb7aff;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.roll-btn:hover {
+  transform: scale(1.05);
+}
+
+.info {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+/* Модалка */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 0, 28, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  width: 80%;
+  max-width: 360px;
+  background: rgba(100, 40, 150, 0.3);
+  border: 1px solid #d1a0ff;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #c89cff;
+}
+
+.modal-title {
+  font-size: 22px;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px #d9b8ff;
+}
+
+.modal-text {
+  font-size: 17px;
+  opacity: .85;
+}
+
+.modal-btn {
+  margin-top: 20px;
+  padding: 10px 26px;
+  font-size: 18px;
+  background: #e8cfff;
+  color: #30004a;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* 📱 Мобильная адаптация */
+@media (max-width: 600px) {
+  .title { font-size: 34px; }
+  .subtitle { font-size: 16px; }
+
+  #board {
+    grid-template-columns: repeat(8, 38px);
+    width: 316px;
+  }
+
+  .cell {
+    width: 38px;
+    height: 38px;
+    font-size: 12px;
+  }
+
+  .roll-btn {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .info { font-size: 16px; }
+}
